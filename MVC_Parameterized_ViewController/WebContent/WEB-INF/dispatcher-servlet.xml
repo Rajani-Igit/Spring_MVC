@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+<property name="mappings">
+<props>
+<prop key="/showcontact.htm">viecontactController</prop>
+<prop key="/showaboutus.htm">viewaboutusController</prop>
+</props>
+</property>
+</bean>
+<bean id="viecontactController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+<property name="viewName" value="contactus"></property>
+</bean>
+
+<bean id="viewaboutusController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+<property name="viewName" value="aboutus"></property>
+</bean>
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/WEB-INF/views/"></property>
+<property name="suffix" value=".jsp"></property>
+</bean>
+</beans>
