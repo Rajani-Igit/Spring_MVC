@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MVC_BeanName_Url_HandlerMapping</display-name>
+<context-param>
+<param-name>contextConfigLocation</param-name>
+<param-value>/WEB-INF/application-context.xml</param-value>
+</context-param>
+<listener>
+<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+<servlet>
+<servlet-name>dispatcher</servlet-name>
+<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+<init-param>
+<!-- Here if you provide namespace as init param name it will take the same value as xml file and search in WEB-INF directory default like web-beans.xml -->
+<!-- If you do not provide any init param it will take servletname-servlet.xml and search in WEB-INF directory eg. dis -->
+<param-name>namespace</param-name>
+<param-value>web-beans</param-value>
+</init-param>
+</servlet>
+<servlet-mapping>
+<servlet-name>dispatcher</servlet-name>
+<url-pattern>*.htm</url-pattern>
+</servlet-mapping>
+</web-app>
