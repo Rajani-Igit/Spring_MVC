@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Here the controlerclassname handler mapping matchches the incomming url with controller class name eg home.action to HomeController -->
+<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+
+</bean>
+<bean class="com.app.controller.HomeController"/>
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/WEB-INF/views/"/>
+<property name="suffix" value=".jsp"/>
+</bean>
+</beans>
